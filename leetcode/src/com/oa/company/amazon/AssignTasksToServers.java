@@ -32,6 +32,6 @@ public class AssignTasksToServers {
 
     public static void main(String[] args) {
         AssignTasksToServers aServers = new AssignTasksToServers();
-        System.out.println(aServers.assignTasks(5, new int[] { 3, 2, 3, 2, 4 }));
+        System.out.println(aServers.assignTasks(5, new int[] { 4, 0, 2, 2 }));
     }
 }
