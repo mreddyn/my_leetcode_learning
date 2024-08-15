@@ -1,6 +1,7 @@
 package com.oa.company.tiktok;
 
 public class LongestConcaveSubsequence {
+    // https://leetcode.com/discuss/interview-question/4801668/TikTok-oror-OA-question
 
     public static int maxLength(int[] arr) {
         int n = arr.length;
