@@ -59,7 +59,7 @@ public class RemoveUnderScoreFromMiddle {
 
     public static void main(String[] args) {
         RemoveUnderScoreFromMiddle removeUnderScoreFromMiddle = new RemoveUnderScoreFromMiddle();
-        System.out.println(removeUnderScoreFromMiddle.removeUnderscore("___leet_code__"));
+        System.out.println(removeUnderScoreFromMiddle.removeUnderscore("__variable_one__ _variable_two variable_three"));
         System.out.println(removeUnderScoreFromMiddle.removeUnderscore("___leet___code__"));
         System.out.println(removeUnderScoreFromMiddle.removeUnderscore("___leet_co_de__"));
     }

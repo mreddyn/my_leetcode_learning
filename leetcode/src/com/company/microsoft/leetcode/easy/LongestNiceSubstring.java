@@ -1,0 +1,9 @@
+package com.company.microsoft.leetcode.easy;
+
+public class LongestNiceSubstring {
+    public String longestNiceSubstring(String s) {
+
+
+        return "";
+    }
+}
