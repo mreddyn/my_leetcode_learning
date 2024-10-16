@@ -43,22 +43,18 @@ public class CountVowelSubStringsOfaString {
         int subStringsCount = 0, n = word.length();
         var vowelSet = new HashSet<Character>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
         var vowelsInWindow = new HashMap<Character, Integer>();
-        int windowEnd = 0, windowStart = 0;
-        while (windowEnd < n) {
-            char c = word.charAt(windowEnd);
-            if (!vowelSet.contains(c)) {
+        for (int windowEnd = 0, windowStart = 0; windowEnd < n; windowEnd++) {
+            if (!vowelSet.contains(word.charAt(windowEnd))) {
                 windowStart = windowEnd + 1;
-                windowEnd++;
                 vowelsInWindow.clear();
                 continue;
             }
-            vowelsInWindow.put(c, vowelsInWindow.getOrDefault(c, 0) + 1);
-            windowEnd++;
+
+            vowelsInWindow.put(word.charAt(windowEnd), vowelsInWindow.getOrDefault(word.charAt(windowEnd), 0) + 1);
             while (vowelsInWindow.size() > k) {
-                c = word.charAt(windowStart);
-                vowelsInWindow.put(c, vowelsInWindow.get(c) - 1);
-                if (vowelsInWindow.get(c) == 0) {
-                    vowelsInWindow.remove(c);
+                vowelsInWindow.put(word.charAt(windowStart), vowelsInWindow.get(word.charAt(windowStart)) - 1);
+                if (vowelsInWindow.get(word.charAt(windowStart)) == 0) {
+                    vowelsInWindow.remove(word.charAt(windowStart));
                 }
                 windowStart++;
             }
