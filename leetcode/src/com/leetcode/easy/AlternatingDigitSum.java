@@ -14,7 +14,7 @@ public class AlternatingDigitSum {
     }
 
     public static void main(String[] args) {
-        AlternatingDigitSum aDigitSum = new AlternatingDigitSum();
-        System.out.println(aDigitSum.alternateDigitSum(10));
+        AlternatingDigitSum ads = new AlternatingDigitSum();
+        System.out.println(ads.alternateDigitSum(12345));
     }
 }
