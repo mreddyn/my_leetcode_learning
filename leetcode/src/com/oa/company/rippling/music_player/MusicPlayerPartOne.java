@@ -4,16 +4,18 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Logger;
 
 public class MusicPlayerPartOne {
     // map from SongId to SongInfo
     private final Map<Integer, SongInfo> songsMap = new HashMap<>();
     // next songId to assign
     private int nextSongId = 1;
+    private final Logger logger = Logger.getLogger(getClass().getName());
 
     public int addSong(String title) {
         int currentSongId = nextSongId++;
-        songsMap.put(currentSongId, new SongInfo(currentSongId, title, new HashSet<Integer>()));
+        songsMap.put(currentSongId, new SongInfo(currentSongId, title, new HashSet<>()));
         return currentSongId;
     }
 
@@ -31,11 +33,11 @@ public class MusicPlayerPartOne {
     public void printAnalyticsSummary() {
         songsMap.values().stream()
                 .sorted((a, b) -> b.uniqueUsers().size() - a.uniqueUsers().size())
-                .forEach(songInfo -> System.out.println(songInfo.title() + ": " + songInfo.uniqueUsers().size()));
+                .forEach(songInfo -> logger.info(songInfo.title() + ": " + songInfo.uniqueUsers().size()));
     }
 
     record SongInfo(int songId, String title, Set<Integer> uniqueUsers) {
-    };
+    }
 
     public static void main(String[] args) {
         var player = new MusicPlayerPartOne();
