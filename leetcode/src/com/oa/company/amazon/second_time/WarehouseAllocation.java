@@ -28,8 +28,8 @@ public class WarehouseAllocation {
 
     public static void main(String[] args) {
         WarehouseAllocation obj = new WarehouseAllocation();
-        System.out.println(obj.findMinimumOperations(new int[] { 5, 5, 8, 7 }));
-        System.out.println(obj.findMinimumOperations(new int[] { 2, 4, 1 }));
+        System.out.println(obj.findMinimumOperations(new int[] { 1, 2, 7 }));
+        System.out.println(obj.findMinimumOperations(new int[] { 1,2,8,9 }));
         System.out.println(obj.findMinimumOperations(new int[] { 4, 4, 4, 4, 4 }));
     }
 }
